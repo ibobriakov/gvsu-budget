@@ -12,5 +12,5 @@
 
   # Variables for update.php
   $user = 'admin';
-  $pass = 'pass';
+  $pass = 'supersecretpass';
 ?>
