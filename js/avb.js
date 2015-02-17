@@ -43,7 +43,7 @@ avb.firstYear = null;
 // last datapoint
 avb.lastYear = null;
 avb.currentYear = new Date().getFullYear();
-avb.thisYear = avb.currentYear;
+avb.thisYear = avb.currentYear - 1;
 
 // amount of yearly taxes spent by user
 avb.userContribution = null;
