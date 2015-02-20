@@ -390,6 +390,7 @@ avb.treemap = function () {
         } else {
             description = d.descr;
         }
+        description = d.descr + formatcurrency(d.values[yearIndex].val);
 
         // attach popover to zone
         attachPopoverIe(this, d.key, description);
@@ -422,7 +423,7 @@ avb.treemap = function () {
                     }
                 },
                 title: (descr !== '' && d.title !== '') ? d.key : '',
-                content: (descr !== '') ? descr : d.key,
+                content: (descr !== '') ? descr : formatcurrency(d.values[yearIndex].val),
                 html: true
             });
         }
@@ -453,7 +454,9 @@ avb.treemap = function () {
         var description;
         if (avb.userContribution != null && avb.section == 'expenses') {
             // popover content is split in separate 2 divs
-            description = '<div>' + d.descr + '</div> <div class="contribution"> Your contribution is ' + stats.individual.value(d) + '</div>';
+            // description = '<div>' + d.descr + '</div> <div class="contribution"> Your contribution is ' + stats.individual.value(d) + '</div>';
+            // tooltip content
+            description = d.descr + formatcurrency(d.values[yearIndex].val);
         } else {
             description = d.descr;
         }

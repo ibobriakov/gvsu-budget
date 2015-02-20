@@ -65,15 +65,18 @@ stats = {
     individual: {
         title: "Individual",
         class: "span6 individual",
-        value: function (d) {
-            var percentage = d.values[yearIndex].val / avb.root.values[yearIndex].val;
+        value: function(d){return function(){};},
+        // value: function (d) {
+            // var percentage = d.values[yearIndex].val / avb.root.values[yearIndex].val;
 
-            return '$' + (avb.userContribution * percentage).toFixed(2);
-        },
-        side: 'your yearly tax contribution.',
+            // return '$' + (avb.userContribution * percentage).toFixed(2);
+        // },
+        // side: 'your yearly tax contribution.',
+        side: '',
         cellClass: "value sum",
         cellFunction: function (d, cell) {
             avb.table.renderImpact(d, cell)
+            // return null;
         }
     },
     growth: {

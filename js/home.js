@@ -69,11 +69,13 @@ avb.home = function () {
     /*
     *   Individual contribution tour, begins when user types in a contribution amount
     */
-    var individualTour = [{
-        selector: '.individual',
-        text: 'Here is your yearly tax contribution.',
-        position: 'right'
-    }, {
+    var individualTour = [
+    // {
+    //     selector: '.individual',
+    //     text: 'Here is your yearly tax contribution.',
+    //     position: 'right'
+    // },
+    {
         selector: '#navigation',
         text: 'See how much you pay for these services.',
         position: 'top'
@@ -262,6 +264,7 @@ avb.home = function () {
     *   retrieves resident annual contribution
     */
     getContribution = function () {
+        return;
         var defaultContribution = 2000;
         // reads contribution cookie
         var value = jQuery.cookie('contribution') || defaultContribution;
