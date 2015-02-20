@@ -8,7 +8,7 @@
 
                 <div class="home-column" id="home-col1" style=
                 "display:inline-block;">
-                    <p>Government budgets can be tough to understand, but now the <?php echo $longName; ?>, <?php echo $state; ?> is providing the next generation of accessibility in financial information that allows citizens to view, engage with, and discuss.</p>
+                    <p>Grand Valley State University provides accessibility to financial information allowing stakeholders to view, engage with, and discuss.</p>
                 </div>
 
                 <div class="home-column text-center" id="home-col2" style=
