@@ -76,7 +76,6 @@ stats = {
         cellClass: "value sum",
         cellFunction: function (d, cell) {
             avb.table.renderImpact(d, cell)
-            // return null;
         }
     },
     growth: {
@@ -85,7 +84,7 @@ stats = {
         value: function (d) {
             return growth(d);
         },
-        side: " compared to previous year.",
+        side: " compared to previous year amount.",
         cellFunction: function (d, cell) {
             avb.table.renderGrowth(d, cell)
         },

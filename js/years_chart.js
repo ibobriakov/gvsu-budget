@@ -14,28 +14,35 @@ function format_shorten(value) {
 
 
 d3.json('/data/mpu-years/mpu-1-years.json', function(error, data){
+  var univers = Object.keys(data);
   var btn_group = document.getElementById('year-selector');
+  var btn_group2 = document.getElementById('university-selector2');
   var dropdown_menu = document.getElementById('university-selector');
   current_university = 'GVSU';
   current_category = 'Revenues';
+  univers.sort();
 
   for (category in data[current_university]) {
     var b = document.createElement('button');
     var btn = $(b);
     btn.addClass('btn btn-default');
     b.type = 'button';
+    b.id = category;
     btn.text(category);
     btn_group.appendChild(b);
   };
 
-  for (university in data) {
-    var li = document.createElement('li');
-    var a = document.createElement('a');
-    $(a).text(university);
-    li.appendChild(a);
-    $('ul', dropdown_menu).append(li);
+  for (university in univers) {
+    var b = document.createElement('button');
+    var btn = $(b);
+    btn.addClass('btn btn-default');
+    b.type = 'button';
+    b.id = univers[university];
+    btn.text(univers[university]);
+    btn_group2.appendChild(b);
   }
-
+  $('#'+current_university).addClass('active');
+  $('#'+current_category).addClass('active');
 
   function updateData (category, university) {
     category = current_category;
@@ -76,8 +83,8 @@ d3.json('/data/mpu-years/mpu-1-years.json', function(error, data){
     updateData(category=current_category);
   });
 
-  $('#university-selector li').click(function() {
-    current_university = jQuery('a', this).text();
+  $('#university-selector2 button').click(function() {
+    current_university = $(this).text();
     $(this).addClass('active').siblings().removeClass('active');
     updateData(university=current_university);
   });
@@ -95,9 +102,11 @@ d3.json('/data/mpu-years/mpu-sum.json', function(error, data){
     var btn = $(b);
     btn.addClass('btn btn-default');
     b.type = 'button';
+    b.id = category;
     btn.text(category);
     btn_group.appendChild(b);
   };
+  $('#'+current_sum_category).addClass('active');
 
   function updateData (category) {
     category = current_sum_category;
