@@ -65,7 +65,7 @@ stats = {
     individual: {
         title: "Individual",
         class: "span6 individual",
-        value: function(d){return function(){};},
+        value: function(d){return (formatcurrency(d.values[yearIndex].val));},
         // value: function (d) {
             // var percentage = d.values[yearIndex].val / avb.root.values[yearIndex].val;
 

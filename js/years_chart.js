@@ -116,18 +116,18 @@ d3.json('/data/mpu-years/mpu-sum.json', function(error, data){
       .x(function(d) { return d[0] })
       .y(function(d) { return d[1] })
       .clipEdge(true)
-      // .useInteractiveGuideline(true)
-      .tooltip(function(key, x, y, e, graph) {
-        var s = 0;
-        var xx = e.pointIndex;
-        for (i in data[current_category]) {
-          s += data[current_category][i].values[xx][1];
-        }
-        // console.log(data[current_category], 'e', e, y);
-        var p = e.point[1] / s * 100.0;
-        var res = '<h4>' + x + ' (total ' + formatcurrency(s) + ')</h4> ' + key + '<p> ' + Math.round(p) +'% of total (' + y + ')</p>'
-        return res;
-      });
+      .useInteractiveGuideline(true);
+      // .tooltip(function(key, x, y, e, graph) {
+      //   var s = 0;
+      //   var xx = e.pointIndex;
+      //   for (i in data[current_category]) {
+      //     s += data[current_category][i].values[xx][1];
+      //   }
+      //   // console.log(data[current_category], 'e', e, y);
+      //   var p = e.point[1] / s * 100.0;
+      //   var res = '<h4>' + x + ' (total ' + formatcurrency(s) + ')</h4> ' + key + '<p> ' + Math.round(p) +'% of total (' + y + ')</p>'
+      //   return res;
+      // });
 
       chart.xAxis
       .showMaxMin(false)

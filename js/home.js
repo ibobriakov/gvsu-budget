@@ -207,19 +207,19 @@ avb.home = function () {
         $('.section').removeAttr('onclick');
 
         // taxes input box initialization
-        $('#tax-input').val(getContribution());
+        // $('#tax-input').val(getContribution());
         // start our when user clicks on start
         $('#tax-input-start').click(function () {
-            setContribution();
+            // setContribution();
             tourClick.call(this, individualTour);
         });
         // start our when user clicks on enter
-        $('#tax-input').keypress(function (e) {
-            if (e.which == 13) {
-                setContribution();
-                tourClick.call(this, individualTour);
-            }
-        });
+        // $('#tax-input').keypress(function (e) {
+        //     if (e.which == 13) {
+        //         setContribution();
+        //         tourClick.call(this, individualTour);
+        //     }
+        // });
 
         /*
         *   Tutorial links initialization
@@ -264,14 +264,14 @@ avb.home = function () {
     *   retrieves resident annual contribution
     */
     getContribution = function () {
-        return;
+        // return;
         var defaultContribution = 2000;
         // reads contribution cookie
         var value = jQuery.cookie('contribution') || defaultContribution;
         // adds yearly contribution as a new card
-        if (value !== null && decks.expenses[0].title !== stats.individual.title) {
-            decks.expenses.unshift(stats.individual);
-        }
+        // if (value !== null && decks.expenses[0].title !== stats.individual.title) {
+        //     decks.expenses.unshift(stats.individual);
+        // }
         return value;
     },
 
@@ -279,6 +279,7 @@ avb.home = function () {
     * reads yearly contribution from input box and stores it
     */
     setContribution = function () {
+        return;
         // value validation
         var input = parseFloat($('#tax-input').val());
         if (isNaN(input)) return;
