@@ -13,12 +13,16 @@
 
                 <div class="home-column text-center" id="home-col2" style=
                 "display:inline-block; margin-left:auto;">
-                    <p style="margin-top:20px;"><a class="link" href=
+                    <p style="margin-top:-0.5em;"><a class="link" href=
                     "javascript:;" onclick="avb.home.hide(true);" style=
                     "text-decoration:underline;">Start the tour</a>
                     </p>
-                    <p style="margin-top:20px;">or</p>
-                    <p style="margin-top:20px;"><a class="link" href="javascript:;" onclick=
+                    <p style="margin-top:-0.5em;">or</p>
+                    <p style="margin-top:-0.5em;"><a class="link" href="/data/glossary.docx" onclick=
+                    "avb.home.hide();" style=
+                    "text-decoration:underline;">Get Glossary</a></p>
+                    <p style="margin-top:-0.5em;">or</p>
+                    <p style="margin-top:-0.5em;"><a class="link" href="javascript:;" onclick=
                     "avb.home.hide();" style=
                     "text-decoration:underline;">Click here to explore</a></p>
                 </div>

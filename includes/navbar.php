@@ -4,8 +4,8 @@
 
     <div class="homebutton" onclick='window.location = "/"'>
 
-      <div style="font-size:32px;line-height:28px; display:inline-block"> <?php echo $shortName; ?>, <?php echo $stateAbbreviation; ?>  </div>
-      <img src="/img/logo@High.png" alt="avb-logo" width=24 height=24 />
+      <div style="font-size:32px;line-height:28px; display:none"> <?php echo $shortName; ?>, <?php echo $stateAbbreviation; ?>  </div>
+      <img src="/img/logo@High.png" alt="avb-logo" height="55px" />
    </div>
 
     <div id="navbar-links" style="line-height:30px;">
