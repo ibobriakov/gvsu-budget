@@ -34,8 +34,10 @@ stats = {
         value: function (d) {
             return formatcurrency(d.values[yearIndex].val);
         },
-        side: function () {
-            return " in " + (avb.firstYear + yearIndex).toString() + "."
+        side: function (d) {
+            res =" total in " + (avb.firstYear + yearIndex).toString();
+	    if (d.key === "Revenues") res += ' (net Financial Aid)';
+	    return res + '.';
         },
         cellClass: "value sum ",
         cellFunction: function (d, cell) {
@@ -84,7 +86,7 @@ stats = {
         value: function (d) {
             return growth(d);
         },
-        side: " compared to previous year amount.",
+        side: " increase year-over-year.",
         cellFunction: function (d, cell) {
             avb.table.renderGrowth(d, cell)
         },
@@ -187,6 +189,8 @@ tables = {
 function formatcurrency(value) {
     if (value === undefined) {
         return "N/A";
+    } else if (value >= 1000000000) {
+	    return "$ " + Math.round(value / 1000000000).toString() + " B";
     } else if (value >= 1000000) {
         return "$" + Math.round(value / 1000000).toString() + " M";
     } else if (value < 1000000 && value >= 1000) {

@@ -1,6 +1,8 @@
 function format_shorten(value) {
     if (value === undefined) {
         return "N/A";
+    } else if (value >= 100000000) {
+        return Math.round(value / 100000000).toString() + " B";
     } else if (value >= 1000000) {
         return Math.round(value / 1000000).toString() + " M";
     } else if (value < 1000000 && value >= 1000) {
