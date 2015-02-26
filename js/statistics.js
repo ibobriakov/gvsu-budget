@@ -118,7 +118,7 @@ stats = {
         title: "Average",
         class: "span6 ",
         value: function (d) {
-            return formatcurrency(d3.mean(d.values.slice(0, yearIndex), function(d) {return d.val}));
+            return formatcurrency(d3.mean(d.values.slice(Math.min(0, yearIndex - 1), yearIndex+1), function(d) {return d.val}));
         },
         side: "on average over previous years."
     },
