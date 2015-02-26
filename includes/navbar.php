@@ -5,12 +5,12 @@
     <div class="homebutton" onclick='window.location = "/"'>
 
       <div style="font-size:32px;line-height:28px; display:none"> <?php echo $shortName; ?>, <?php echo $stateAbbreviation; ?>  </div>
-      <img src="/img/logo@High.png" alt="avb-logo" height="64px" />
+      <img src="/img/logo@High.png" alt="avb-logo" height="64px" width="203px" />
    </div>
 
     <div id="navbar-links" style="line-height:30px">
 
-     <div onclick='window.location = "/"' class="entry homebutton"> University Budget, Visualized </div>
+     <div onclick='window.location = "/"' class="entry homebutton"> University Budget. Visualized. </div>
 
      <div class="entry navbar-margin">
         <span class="menubutton section margin" data-section="revenues"><a href="/revenues">Revenues</a></span>
