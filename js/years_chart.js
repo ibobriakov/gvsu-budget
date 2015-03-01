@@ -51,7 +51,7 @@ d3.json('/data/mpu-years/mpu-1-years.json', function(error, data){
     university = current_university;
     var sub_data = data[university];
     nv.addGraph(function() {
-      var chart = nv.models.stackedAreaChart()
+      var chart = nv.models.lineChart()
       .interpolate('monotone')
       .x(function(d) { return d[0] })
       .y(function(d) { return d[1] })
@@ -68,6 +68,9 @@ d3.json('/data/mpu-years/mpu-1-years.json', function(error, data){
       .ticks(4)
       .tickFormat(function(d) { return format_shorten(d);});
 
+      sub_data[category].forEach(function(element, index){
+        element["area"] = true;
+      });
       d3.select('#years-chart svg')
       .datum(sub_data[category])
       .transition().duration(500).call(chart);
@@ -113,7 +116,7 @@ d3.json('/data/mpu-years/mpu-sum.json', function(error, data){
   function updateData (category) {
     category = current_sum_category;
     nv.addGraph(function() {
-      var chart = nv.models.stackedAreaChart()
+      var chart = nv.models.lineChart()
       .interpolate('monotone')
       .x(function(d) { return d[0] })
       .y(function(d) { return d[1] })
@@ -142,6 +145,16 @@ d3.json('/data/mpu-years/mpu-sum.json', function(error, data){
                 return format_shorten(d);
             });
 
+      data[category].forEach(function(element, index){
+        element["area"] = true;
+      });
+      data[category].sort(function(a, b){
+        var am = mean(a.values),
+            bm = mean(b.values);
+        if (am > bm) return -1;
+        if (bm > am) return 1;
+        return 0;
+      });
       d3.select('#sum-years-chart svg')
       .datum(data[category])
       .transition().duration(500).call(chart);
@@ -160,3 +173,9 @@ d3.json('/data/mpu-years/mpu-sum.json', function(error, data){
   });
 
 });
+
+function mean (arr) {
+  var sum = 0;
+  for (i = 0; i < arr.length; ++i) sum += arr[i][1];
+  return sum / arr.length;
+}
