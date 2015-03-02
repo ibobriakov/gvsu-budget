@@ -2,10 +2,8 @@
 <div class="purple-border" id="avb-menubar" style="padding-bottom: 3em;">
   <div class="container">
 
-    <div class="homebutton" onclick='window.location = "/"'>
-
-      <div style="font-size:32px;line-height:28px; display:none"> <?php echo $shortName; ?>, <?php echo $stateAbbreviation; ?>  </div>
-      <img src="/img/logo@High.png" alt="avb-logo" height="64px" width="203px" />
+    <div class="homebutton" onclick='window.location = "/"' style="background: #0065a4; margin-bottom: -4px;">
+      <img style="padding-left: 10px; padding-right: 10px;" src="/img/logo@High.png" alt="avb-logo" height="60px" width="190px" />
    </div>
 
     <div id="navbar-links" style="line-height:30px">

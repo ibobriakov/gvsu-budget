@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row-fluid">
         <div>
-	<!-- <h4 class="text-right" style="margin-right: 15vh;"><i>Hint: for seeing in %, use "Expanded" view.</i></h4> -->
+	<h4 class="text-right" style="margin-right: 15vh;"><i>Hint: for seeing in %, use "Expanded" view.</i></h4>
             <h3>All Michigan Public Universities — Data 1977-2013</h3>
             <div style="margin-bottom: 1em;">
             <span style="margin-right: 8%;">

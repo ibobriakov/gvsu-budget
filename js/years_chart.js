@@ -52,7 +52,7 @@ d3.json('/data/mpu-years/mpu-1-years.json', function(error, data){
     university = current_university;
     var sub_data = data[university];
     nv.addGraph(function() {
-      var chart = nv.models.lineChart()
+      var chart = nv.models.stackedAreaChart()
       .interpolate('monotone')
       .x(function(d) { return d[0] })
       .y(function(d) { return d[1] })
