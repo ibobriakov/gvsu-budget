@@ -186,19 +186,20 @@ tables = {
 *   @param {float/int} value - number to be formatted
 *   @return {string} formatted value
 */
+var fixed_length = 1;
 function formatcurrency(value) {
     if (value === undefined) {
         return "N/A";
     } else if (value >= 1000000000) {
-	    return "$ " + Math.round(value / 1000000000).toString() + " B";
+	    return "$ " + (value / 1000000000).toFixed(fixed_length).toString() + " B";
     } else if (value >= 1000000 && value < 1000000000) {
-        return "$" + Math.round(value / 1000000).toString() + " M";
+        return "$" + (value / 1000000).toFixed(fixed_length).toString() + " M";
     } else if (value < 1000000 && value >= 1000) {
-        return "$" + Math.round(value / 1000).toString() + " K";
+        return "$" + (value / 1000).toFixed(fixed_length).toString() + " K";
     } else if (value < 1 && value != 0) {
-        return "¢" + Math.round(value * 100).toString();
+        return "¢" + (value * 100).toFixed(fixed_length).toString();
     } else {
-        return "$ " + value.toString();
+        return "$ " + value.toFixed(fixed_length).toString();
     }
 }
 
