@@ -6,6 +6,7 @@
   <!-- entry title -->
     <div class="title-head" style="height:70px;">
       <div style="display:inline-block;" class="text" > </div>
+      <h5 style="margin-top:-0.5em;margin-left:0.5em;" class="subtext" >(in 2013 HEPI adjusted dollars)</h5>
     </div>
 
     <div id="info-wrap" >
